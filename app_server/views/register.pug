@@ -1,0 +1,65 @@
+extends layout
+
+block content
+    doctype html
+    html
+        head
+            meta(charset='UTF-8')
+            title Registration Form
+            meta(name='viewport', content='width=device-width, initial-scale=1')
+        body
+            .container
+                // - Heading
+                header.heading 
+                    h1 Registration Form
+                hr
+
+                // - Form starting
+                form(action='/submit', method='POST')
+                    .row
+                        // - For Name
+                        .col-sm-12
+                            .row
+                                .col-xs-4
+                                    label(for='fname') First Name:
+                                .col-xs-8
+                                    input#fname.form-control(type='text', name='fname', placeholder='Enter your First Name')
+
+                        .col-sm-12
+                            .row
+                                .col-xs-4
+                                    label(for='lname') Last Name:
+                                .col-xs-8
+                                    input#lname.form-control(type='text', name='lname', placeholder='Enter your Last Name')
+
+                        // - For Email
+                        .col-sm-12
+                            .row
+                                .col-xs-4
+                                    label(for='email') Email:
+                                .col-xs-8
+                                    input#email.form-control(type='email', name='email', placeholder='Enter your email')
+
+                        // - For Password
+                        .col-sm-12
+                            .row
+                                .col-xs-4
+                                    label(for='password') Password:
+                                .col-xs-8
+                                    input#password.form-control(type='password', name='password', placeholder='Enter your Password')
+
+                        // - For Gender
+                        .col-sm-12
+                            .row
+                                .col-xs-4
+                                    label Gender:
+                                .col-xs-4
+                                    input#gender-male(type='radio', name='gender', value='boy')
+                                    | Male
+                                .col-xs-4
+                                    input#gender-female(type='radio', name='gender', value='girl')
+                                    | Female
+
+                // - Submit Button
+                .col-sm-12
+                    button.btn.btn-warning(type='submit') Submit

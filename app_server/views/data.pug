@@ -1,0 +1,26 @@
+extends layout 
+
+block content
+    .product_item
+        .col-lg-3.col-md-4.col-sm-6.mix.sale(style='display: inline-block;', data-bound='')
+            .single_product
+                .product_image
+                    img(src='https://www.karosearch.com/images/categories/medical-hospitals.jpg', alt='')
+                    .new_badge New
+                    .box-content
+                        a(href='#')
+                            i.fa.fa-heart-o
+                        a(href='#')
+                            i.fa.fa-cart-plus
+                        a(href='#')
+                            i.fa.fa-search
+                .product_btm_text
+                    h4
+                        a(href='#') Product Title
+                    .p_rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                    span.price $123.00

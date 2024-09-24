@@ -5,11 +5,19 @@ const index = function(req, res){
 const about = function(req, res){ 
     res.render('index', { title: 'About' }); 
     };
-    const names = function(req, res){ 
-        res.render('index', { title: 'Nathan Swan-Pole' }); 
-        };
+const register = function(req, res){ 
+    res.render('Register', { title: 'Register' }); 
+    };
+const login = function(req, res){ 
+    res.render('Login', { title: 'Login' }); 
+    };
+const data = function(req, res){ 
+    res.render('data', { title: 'data' }); 
+    };
     module.exports = { 
     index,
     about,
-    names
+    register,
+    login,
+    data
     };
