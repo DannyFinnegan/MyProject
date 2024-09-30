@@ -1,26 +1,33 @@
 extends layout 
 
 block content
-    .product_item
-        .col-lg-3.col-md-4.col-sm-6.mix.sale(style='display: inline-block;', data-bound='')
-            .single_product
-                .product_image
-                    img(src='https://www.karosearch.com/images/categories/medical-hospitals.jpg', alt='')
-                    .new_badge New
-                    .box-content
-                        a(href='#')
-                            i.fa.fa-heart-o
-                        a(href='#')
-                            i.fa.fa-cart-plus
-                        a(href='#')
-                            i.fa.fa-search
-                .product_btm_text
-                    h4
-                        a(href='#') Product Title
-                    .p_rating
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                        i.fa.fa-star
-                    span.price $123.00
+  .container
+    .row
+      .span3
+        h5
+          i.icon.icon-globe
+          |  Description 1
+        p
+          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+      .span3
+        h5
+          i.icon-ok
+          |  Description 2
+        p
+          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+      .span3
+        h5
+          i.icon-bold
+          |  Description 3
+        p
+          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+      .span3
+        h5
+          i.icon.icon-star
+          |  Description 4
+        p
+          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+    block script 
+        script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js")
+        script(src="//code.jquery.com/jquery-1.11.1.min.js")
