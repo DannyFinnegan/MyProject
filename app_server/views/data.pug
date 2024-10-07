@@ -1,15 +1,14 @@
-<!--extends layout --> 
+//- extends layout
 
 link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
 .container
-  h3.h3 shopping Demo-1 
+  h3.h3= title 
   .row
     .col-md-3.col-sm-6
       .product-grid
         .product-image
           a(href='#')
-           //- img.pic-1(src="..\public\images\4070Super.jpg")
-           //- img.pic-2(src='../public/images/4070Super.jpg')
+           img.pic-1(src='images/4070Super.jpg')
           ul.social
             li
               a(href='', data-tip='Quick View')
@@ -30,17 +29,15 @@ link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7
           li.fa.fa-star.disable
         .product-content
           h3.title
-            a(href='#') Women&apos;s Blouse
+            a(href='#') Nvidia GeForce RTX 4070 Super
           .price
-            | $16.00
+            | $336.00
           a.add-to-cart(href='') + Add To Cart
     .col-md-3.col-sm-6
       .product-grid
         .product-image
           a(href='#')
-            //- img.pic-1(src='..\public\images\4070Super.jpg')
-            //- img.pic-2(src='..\public\images\4070Super.jpg')
-            img.pic-2(src='..\public\images\4070Super.jpg')
+             img.pic-1(src='images/4080Super.jpg')
           ul.social
             li
               a(href='', data-tip='Quick View')
@@ -70,8 +67,7 @@ link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7
       .product-grid
         .product-image
           a(href='#')
-          //-  img.pic-1(src='public\images\4070Super.jpg')
-          //-  img.pic-2(src='public\images\4070Super.jpg')
+          img.pic-1(src='images/4060Regular.jpg')
           ul.social
             li
               a(href='', data-tip='Quick View')
@@ -101,8 +97,7 @@ link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7
       .product-grid
         .product-image
           a(href='#')
-          //-  img.pic-1(src='http://bestjquery.com/tutorial/product-grid/demo9/images/img-7.jpg')
-          //-  img.pic-2(src='http://bestjquery.com/tutorial/product-grid/demo9/images/img-8.jpg')
+            img.pic-1(src='images/4090Regular.jpg')
           ul.social
             li
               a(href='', data-tip='Quick View')
