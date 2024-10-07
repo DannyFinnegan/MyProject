@@ -1,33 +1,137 @@
-extends layout 
+<!--extends layout --> 
 
-block content
-  .container
-    .row
-      .span3
-        h5
-          i.icon.icon-globe
-          |  Description 1
-        p
-          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-      .span3
-        h5
-          i.icon-ok
-          |  Description 2
-        p
-          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-      .span3
-        h5
-          i.icon-bold
-          |  Description 3
-        p
-          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-      .span3
-        h5
-          i.icon.icon-star
-          |  Description 4
-        p
-          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+.container
+  h3.h3 shopping Demo-1 
+  .row
+    .col-md-3.col-sm-6
+      .product-grid
+        .product-image
+          a(href='#')
+            img.pic-1(src='http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg')
+            img.pic-2(src='http://bestjquery.com/tutorial/product-grid/demo9/images/img-2.jpg')
+          ul.social
+            li
+              a(href='', data-tip='Quick View')
+                i.fa.fa-search
+            li
+              a(href='', data-tip='Add to Wishlist')
+                i.fa.fa-shopping-bag
+            li
+              a(href='', data-tip='Add to Cart')
+                i.fa.fa-shopping-cart
+          span.product-new-label Sale
+          span.product-discount-label 20%
+        ul.rating
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star.disable
+        .product-content
+          h3.title
+            a(href='#') Women&apos;s Blouse
+          .price
+            | $16.00
+            span $20.00
+          a.add-to-cart(href='') + Add To Cart
+    .col-md-3.col-sm-6
+      .product-grid
+        .product-image
+          a(href='#')
+            img.pic-1(src='http://bestjquery.com/tutorial/product-grid/demo9/images/img-3.jpg')
+            img.pic-2(src='http://bestjquery.com/tutorial/product-grid/demo9/images/img-4.jpg')
+          ul.social
+            li
+              a(href='', data-tip='Quick View')
+                i.fa.fa-search
+            li
+              a(href='', data-tip='Add to Wishlist')
+                i.fa.fa-shopping-bag
+            li
+              a(href='', data-tip='Add to Cart')
+                i.fa.fa-shopping-cart
+          span.product-new-label Sale
+          span.product-discount-label 50%
+        ul.rating
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+        .product-content
+          h3.title
+            a(href='#') Men&apos;s Plain Tshirt
+          .price
+            | $5.00
+            span $10.00
+          a.add-to-cart(href='') + Add To Cart
+    .col-md-3.col-sm-6
+      .product-grid
+        .product-image
+          a(href='#')
+            img.pic-1(src='public\images\4070Super.jpg')
+            img.pic-2(src='public\images\4070Super.jpg')
+          ul.social
+            li
+              a(href='', data-tip='Quick View')
+                i.fa.fa-search
+            li
+              a(href='', data-tip='Add to Wishlist')
+                i.fa.fa-shopping-bag
+            li
+              a(href='', data-tip='Add to Cart')
+                i.fa.fa-shopping-cart
+          span.product-new-label Sale
+          span.product-discount-label 50%
+        ul.rating
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+        .product-content
+          h3.title
+            a(href='#') Men&apos;s Plain Tshirt
+          .price
+            | $5.00
+            span $10.00
+          a.add-to-cart(href='') + Add To Cart
+    .col-md-3.col-sm-6
+      .product-grid
+        .product-image
+          a(href='#')
+            img.pic-1(src='http://bestjquery.com/tutorial/product-grid/demo9/images/img-7.jpg')
+            img.pic-2(src='http://bestjquery.com/tutorial/product-grid/demo9/images/img-8.jpg')
+          ul.social
+            li
+              a(href='', data-tip='Quick View')
+                i.fa.fa-search
+            li
+              a(href='', data-tip='Add to Wishlist')
+                i.fa.fa-shopping-bag
+            li
+              a(href='', data-tip='Add to Cart')
+                i.fa.fa-shopping-cart
+          span.product-new-label Sale
+          span.product-discount-label 50%
+        ul.rating
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+          li.fa.fa-star
+        .product-content
+          h3.title
+            a(href='#') Men&apos;s Plain Tshirt
+          .price
+            | $5.00
+            span $10.00
+          a.add-to-cart(href='') + Add To Cart
+hr
 
-    block script 
-        script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js")
-        script(src="//code.jquery.com/jquery-1.11.1.min.js")
+scripts 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+scripts 
