@@ -2,7 +2,7 @@
 const homelist = function (req, res) {
     res.render('data', {
         title: 'Graphics Cards',
-        GraphicsCards:
+        graphicsCards:
             [
                 {
                     name: 'Nvidia RTX 4070 Super',

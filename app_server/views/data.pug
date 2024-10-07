@@ -4,129 +4,39 @@ link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7
 .container
   h3.h3= title 
   .row
-    .col-md-3.col-sm-6
-      .product-grid
-        .product-image
-          a(href='#')
-           img.pic-1(src='images/4070Super.jpg')
-          ul.social
-            li
-              a(href='', data-tip='Quick View')
-                i.fa.fa-search
-            li
-              a(href='', data-tip='Add to Wishlist')
-                i.fa.fa-shopping-bag
-            li
-              a(href='', data-tip='Add to Cart')
-                i.fa.fa-shopping-cart
-          span.product-new-label Sale
-          span.product-discount-label 20%
-        ul.rating
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star.disable
-        .product-content
-          h3.title
-            a(href='#') Nvidia GeForce RTX 4070 Super
-          .price
-            | $336.00
-          a.add-to-cart(href='') + Add To Cart
-    .col-md-3.col-sm-6
-      .product-grid
-        .product-image
-          a(href='#')
-             img.pic-1(src='images/4080Super.jpg')
-          ul.social
-            li
-              a(href='', data-tip='Quick View')
-                i.fa.fa-search
-            li
-              a(href='', data-tip='Add to Wishlist')
-                i.fa.fa-shopping-bag
-            li
-              a(href='', data-tip='Add to Cart')
-                i.fa.fa-shopping-cart
-          span.product-new-label Sale
-          span.product-discount-label 50%
-        ul.rating
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-        .product-content
-          h3.title
-            a(href='#') Men&apos;s Plain Tshirt
-          .price
-            | $5.00
-            span $10.00
-          a.add-to-cart(href='') + Add To Cart
-    .col-md-3.col-sm-6
-      .product-grid
-        .product-image
-          a(href='#')
-          img.pic-1(src='images/4060Regular.jpg')
-          ul.social
-            li
-              a(href='', data-tip='Quick View')
-                i.fa.fa-search
-            li
-              a(href='', data-tip='Add to Wishlist')
-                i.fa.fa-shopping-bag
-            li
-              a(href='', data-tip='Add to Cart')
-                i.fa.fa-shopping-cart
-          span.product-new-label Sale
-          span.product-discount-label 50%
-        ul.rating
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-        .product-content
-          h3.title
-            a(href='#') Men&apos;s Plain Tshirt
-          .price
-            | $5.00
-            span $10.00
-          a.add-to-cart(href='') + Add To Cart
-    .col-md-3.col-sm-6
-      .product-grid
-        .product-image
-          a(href='#')
-            img.pic-1(src='images/4090Regular.jpg')
-          ul.social
-            li
-              a(href='', data-tip='Quick View')
-                i.fa.fa-search
-            li
-              a(href='', data-tip='Add to Wishlist')
-                i.fa.fa-shopping-bag
-            li
-              a(href='', data-tip='Add to Cart')
-                i.fa.fa-shopping-cart
-          span.product-new-label Sale
-          span.product-discount-label 50%
-        ul.rating
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-          li.fa.fa-star
-        .product-content
-          h3.title
-            a(href='#') Men&apos;s Plain Tshirt
-          .price
-            | $5.00
-            span $10.00
-          a.add-to-cart(href='') + Add To Cart
+    each card in graphicsCards
+      .col-md-3.col-sm-6
+        .product-grid
+          .product-image
+            a(href='#')
+              img.pic-1(src=card.image)
+            ul.social
+              li
+                a(href='', data-tip='Quick View')
+                  i.fa.fa-search
+              li
+                a(href='', data-tip='Add to Wishlist')
+                  i.fa.fa-shopping-bag
+              li
+                a(href='', data-tip='Add to Cart')
+                  i.fa.fa-shopping-cart
+            span.product-new-label Sale
+            span.product-discount-label= card.sale
+          ul.rating
+            - for (let i = 0; i < 5; i++)
+              if i < card.rating
+                li.fa.fa-star
+              else
+                li.fa.fa-star-o
+          .product-content
+            h3.title
+              a(href='#')= card.name
+            .price
+              | #{card.price}
 hr
 
 scripts 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-scripts 
+scripts
