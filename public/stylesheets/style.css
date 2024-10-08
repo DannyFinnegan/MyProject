@@ -110,3 +110,6 @@ legend {
 .product-grid .add-to-cart{color:#000;font-size:13px;font-weight:600}
 @media only screen and (max-width:990px){.product-grid{margin-bottom:30px}
 }
+.navbar-xs { min-height:22px; border-radius:0} 
+.navbar-xs .navbar-brand{ padding: 2px 8px;font-size: 14px;line-height: 14px; } 
+.navbar-xs .navbar-nav > li > a { border-right:1px solid #ddd; padding-top: 2px; padding-bottom: 2px; line-height: 16px }

@@ -1,7 +1,8 @@
 /* GET 'home' page */
 const homelist = function (req, res) {
     res.render('data', {
-        title: 'Graphics Cards',
+        GPU: 'Graphics Cards',
+        CentPU: 'Central Processing Units',
         graphicsCards:
             [
                 {
@@ -22,7 +23,6 @@ const homelist = function (req, res) {
                     name: 'Nvidia RTX 4060',
                     price: '€296.99',
                     rating: 3,
-                    sale:  ' 0%',
                     image: 'images/4060Regular.jpg'
                 },
                 {
@@ -32,7 +32,16 @@ const homelist = function (req, res) {
                     sale: ' 35%',
                     image: 'images/4090Regular.jpg'
                 }
-            ]
+            ],
+        CentralProcessingUnits:
+        [
+        {
+            name: 'Ryzen 7 5700X',
+            price: '€126.99',
+            rating: 4,
+            image: 'images/Ryzen75800XCPU.jpg'
+        }    
+    ]
     });
 
 };
