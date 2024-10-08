@@ -8,25 +8,29 @@ const homelist = function (req, res) {
                     name: 'Nvidia RTX 4070 Super',
                     price: '€356.99',
                     rating: 3,
-                    sale: '20%'
+                    sale: ' 20%',
+                    image: 'images/4070Super.jpg'
                 },
                 {
                     name: 'Nvidia RTX 4080 Super',
                     price: '€566.99',
                     rating: 4,
-                    sale: '10%'
+                    sale: ' 10%',
+                    image: 'images/4080Super.jpg'
                 },
                 {
                     name: 'Nvidia RTX 4060',
                     price: '€296.99',
                     rating: 3,
-                    sale: '0%'
+                    sale:  ' 0%',
+                    image: 'images/4060Regular.jpg'
                 },
                 {
                     name: 'Nvidia RTX 4090',
                     price: '€756.99',
                     rating: 5,
-                    sale: '35%'
+                    sale: ' 35%',
+                    image: 'images/4090Regular.jpg'
                 }
             ]
     });
