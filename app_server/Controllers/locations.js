@@ -4,7 +4,12 @@ const homelist = function (req, res) {
         GPU: 'Graphics Cards',
         CentPU: 'Central Processing Units',
         graphicsCards:
-            [
+            [  {
+                    name: 'Nvidia RTX 4060',
+                    price: '€296.99',
+                    rating: 3,
+                    image: 'images/4060Regular.jpg'
+                },
                 {
                     name: 'Nvidia RTX 4070 Super',
                     price: '€356.99',
@@ -19,12 +24,7 @@ const homelist = function (req, res) {
                     sale: ' 10%',
                     image: 'images/4080Super.jpg'
                 },
-                {
-                    name: 'Nvidia RTX 4060',
-                    price: '€296.99',
-                    rating: 3,
-                    image: 'images/4060Regular.jpg'
-                },
+              
                 {
                     name: 'Nvidia RTX 4090',
                     price: '€756.99',
