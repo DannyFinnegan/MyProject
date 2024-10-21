@@ -1,81 +1,79 @@
-//-extends layout
+extends layout
 
-link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-.container
-  h3.h3= GPU 
-  .row
-    each card in graphicsCards
-      .col-md-3.col-sm-6
-        .product-grid
-          .product-image
-            a(href='#')
-              img.pic-1(src=card.image)
-            ul.social
-              li
-                a(href='', data-tip='Quick View')
-                  i.fa.fa-search
-              li
-                a(href='', data-tip='Add to Wishlist')
-                  i.fa.fa-shopping-bag
-              li
-                a(href='', data-tip='Add to Cart')
-                  i.fa.fa-shopping-cart
-            if card.sale
-             span.product-new-label Sale
-              span.product-discount-label= card.sale
-            else 
-                span.product-new-label(style='color: white') Sale
-          ul.rating
-            - for (let i = 0; i < 5; i++)
-              if i < card.rating
-                li.fa.fa-star
-              else
-                li.fa.fa-star-o
-          .product-content
-            h3.title
-              a(href='#')= card.name
-            .price
-              | #{card.price}
-hr
-.container
-  h3.h3= CentPU 
-  .row
-    each CPU in CentralProcessingUnits
-      .col-md-3.col-sm-6
-        .product-grid
-          .product-image
-            a(href='#')
-              img.pic-1(src=CPU.image)
-            ul.social
-              li
-                a(href='', data-tip='Quick View')
-                  i.fa.fa-search
-              li
-                a(href='', data-tip='Add to Wishlist')
-                  i.fa.fa-shopping-bag
-              li
-                a(href='', data-tip='Add to Cart')
-                  i.fa.fa-shopping-cart
-            if CPU.sale
-             span.product-new-label Sale
-              span.product-discount-label= CPU.sale
-            else 
-                span.product-new-label(style='color: white') Sale
-          ul.rating
-            - for (let i = 0; i < 5; i++)
-              if i < CPU.rating
-                li.fa.fa-star
-              else
-                li.fa.fa-star-o
-          .product-content
-            h3.title
-              a(href='#')= CPU.name
-            .price
-              | #{CPU.price}
-hr
+block content
+    br
+    br
+    br
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    .container
+      h3.h3= GPU 
+      .row
+        each card in graphicsCards
+          .col-md-3.col-sm-6
+            .product-grid
+              .product-image
+                a(href='#')
+                  img.pic-1(src=card.image)
+                ul.social
+                  li
+                    a(href='', data-tip='Quick View')
+                      i.fa.fa-search
+                  li
+                    a(href='', data-tip='Add to Wishlist')
+                      i.fa.fa-shopping-bag
+                  li
+                    a(href='', data-tip='Add to Cart')
+                      i.fa.fa-shopping-cart
+                if card.sale
+                 span.product-new-label Sale
+                  span.product-discount-label= card.sale
+                else 
+                    span.product-new-label(style='color: white') Sale
+              ul.rating
+                - for (let i = 0; i < 5; i++)
+                  if i < card.rating
+                    li.fa.fa-star
+                  else
+                    li.fa.fa-star-o
+              .product-content
+                h3.title
+                  a(href='#')= card.name
+                .price
+                  | #{card.price}
+    hr
+    .container
+      h3.h3= CentPU 
+      .row
+        each CPU in CentralProcessingUnits
+          .col-md-3.col-sm-6
+            .product-grid
+              .product-image
+                a(href='#')
+                  img.pic-1(src=CPU.image)
+                ul.social
+                  li
+                    a(href='', data-tip='Quick View')
+                      i.fa.fa-search
+                  li
+                    a(href='', data-tip='Add to Wishlist')
+                      i.fa.fa-shopping-bag
+                  li
+                    a(href='', data-tip='Add to Cart')
+                      i.fa.fa-shopping-cart
+                if CPU.sale
+                 span.product-new-label Sale
+                  span.product-discount-label= CPU.sale
+                else 
+                    span.product-new-label(style='color: white') Sale
+              ul.rating
+                - for (let i = 0; i < 5; i++)
+                  if i < CPU.rating
+                    li.fa.fa-star
+                  else
+                    li.fa.fa-star-o
+              .product-content
+                h3.title
+                  a(href='#')= CPU.name
+                .price
+                  | #{CPU.price}
 
-scripts 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-scripts
