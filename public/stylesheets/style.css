@@ -88,8 +88,6 @@ legend {
   font-family: 'Lobster', cursive;
 }
 
-
-
 /********************* shopping Demo-1 **********************/
 .product-grid{font-family:Raleway,sans-serif;text-align:center;padding:0 0 72px;border:1px solid rgba(0,0,0,.1);overflow:hidden;position:relative;z-index:1;background-color: #fff;}
 .product-grid .product-image{position:relative;transition:all .3s ease 0s}
@@ -124,3 +122,30 @@ legend {
 .navbar-xs { min-height:22px; border-radius:0} 
 .navbar-xs .navbar-brand{ padding: 2px 8px;font-size: 14px;line-height: 14px; } 
 .navbar-xs .navbar-nav > li > a { border-right:1px solid #ddd; padding-top: 2px; padding-bottom: 2px; line-height: 16px }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-12 {
+    flex: 1 0 100%;
+    max-width: 100%;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
