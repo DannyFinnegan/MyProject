@@ -40,7 +40,14 @@ const homelist = function (req, res) {
             price: '€126.99',
             rating: 4,
             image: 'images/Ryzen75800XCPU.jpg'
-        }    
+        },
+        {
+            name: 'Ryzen 9 7900x',
+            price: '€526.99',
+            rating: 5,
+            sale: ' 50%',
+            image: 'images/Ryzen97900XCPU.jpg'
+        }
     ]
     });
 

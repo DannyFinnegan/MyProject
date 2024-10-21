@@ -3,10 +3,10 @@ extends layout
 block content
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     .container
-      h3.h3= GPU 
-      .row.flex-container
+      h3.h3= title 
+      .row
         each card in graphicsCards
-          .col-md-3.col-sm-6.flex-item
+          .col-md-3.col-sm-6
             .product-grid
               .product-image
                 a(href='#')
@@ -22,16 +22,14 @@ block content
                     a(href='', data-tip='Add to Cart')
                       i.fa.fa-shopping-cart
                 if card.sale
-                 span.product-new-label Sale
+                  span.product-new-label Sale
                   span.product-discount-label= card.sale
-                else 
-                    span.product-new-label(style='color: white') Sale
               ul.rating
                 - for (let i = 0; i < 5; i++)
                   if i < card.rating
                     li.fa.fa-star
                   else
-                    li.fa.fa-star-o
+                    li.fa.fa-star.disable
               .product-content
                 h3.title
                   a(href='#')= card.name
@@ -58,10 +56,8 @@ block content
                     a(href='', data-tip='Add to Cart')
                       i.fa.fa-shopping-cart
                 if CPU.sale
-                 span.product-new-label Sale
+                  span.product-new-label Sale
                   span.product-discount-label= CPU.sale
-                else 
-                    span.product-new-label(style='color: white') Sale
               ul.rating
                 - for (let i = 0; i < 5; i++)
                   if i < CPU.rating
