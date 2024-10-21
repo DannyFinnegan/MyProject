@@ -1,5 +1,14 @@
 @import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
 body {
   font-family: "Cabin", Arial, sans-serif;
   color: #ffffff;
