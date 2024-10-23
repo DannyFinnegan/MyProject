@@ -5,20 +5,69 @@ head
   link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
   link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
   link(rel='stylesheet', href='/stylesheets/style.css')
-nav.navbar.fixed-top.navbar-toggleable-md.navbar-inverse
-  .container
-    button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarMain')
+.container
+  .row
+    h2 Bootstrap 4 Right align Navbar
+  nav.navbar.navbar-expand-lg.navbar-light.bg-warning
+    a.navbar-brand(href='#') Computer Components Ireland
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
       span.navbar-toggler-icon
-    a.navbar-brand(href='/ ') Loc8r
-    #navbarMain.navbar-collapse.collapse
-      ul.navbar-nav.mr-auto
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto.topnav.navbar-spacing
+        li.nav-item.active
+          a.nav-link(href='#')
+            | Home 
+            span.sr-only (current)
         li.nav-item
-          a.nav-link(href='/Register/') Register 
-          li 
-          li 
-          li 
+          a.nav-link(href='#') Shop Pre-Owned
         li.nav-item
-          a.nav-link(href='/Login/') Login 
+          a.nav-link(href='#') Shop New Cars
+        li.nav-item
+          a.nav-link(href='#') Clearence Event
+        li.nav-item.dropdown
+          a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            | Resources
+          .dropdown-menu(aria-labelledby='navbarDropdown')
+            a.dropdown-item(href='#') Carfax
+            a.dropdown-item(href='#') Carproof
+            .dropdown-divider
+            a.dropdown-item(href='#') Omnivic
+        li.nav-item
+          a.nav-link(href='#') About
+        li.nav-item
+          a.nav-link(href='#') Contact
+        li.nav-item
+          a.nav-link.btn.btn-primary.text-white(type='button', href='#', data-toggle='modal', data-target='#myModal') Sign In
+        li.nav-item
+          a.nav-link.btn.btn-danger.text-white(type='button', href='#', data-toggle='modal', data-target='#myModal') Register
+    // The Modal
+    #myModal.modal
+      .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            h4.modal-title Customer Sign In
+            button.close(type='button', data-dismiss='modal') &times;
+          // Modal body
+          .modal-body
+            form
+              label.sr-only(for='usrname') Username
+              .input-group.mb-3
+                .input-group-prepend
+                  span#basic-addon1.input-group-text
+                    i.fa.fa-user
+                input.form-control(type='text', placeholder='Username', aria-label='Username', aria-describedby='basic-addon1')
+              label.sr-only(for='Password') Name
+              .input-group.mb-2
+                .input-group-prepend
+                  span#basic-addon2.input-group-text
+                    i.fa.fa-key
+                input#Password.form-control(type='password', placeholder='Password', aria-label='Password', aria-describedby='basic-addon2')
+          // Modal footer
+          .modal-footer
+            button.btn.btn-primary(type='submit') Sign In
+            button.btn.btn-danger(type='button', data-dismiss='modal') Close
+
 .container
   block content
   footer
@@ -34,6 +83,3 @@ script(src='/javascripts/bootstrap.min.js')
       link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet')
       script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js')
       script(src='//code.jquery.com/jquery-1.11.1.min.js')
-
-
-

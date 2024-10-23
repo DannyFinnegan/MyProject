@@ -1,3 +1,5 @@
+/********************* Basic Page Setup Code **********************/
+
 @import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
 
 .flex-column {
@@ -16,15 +18,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lobster', cursive;
-}
-
-.navbar {
-  background-color: #ad1d28;
-  border-color: #911821;
-}
-
-.navbar-brand {
   font-family: 'Lobster', cursive;
 }
 
@@ -148,4 +141,12 @@ legend {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+}
+
+topnav a:hover {
+  border-bottom: 3px solid red;
+}
+
+.navbar-spacing .nav-item {
+  margin-right: 50px;
 }
