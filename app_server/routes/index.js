@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const ctrlLocations = require('./controllers/locations');
-const ctrlOthers = require('./controllers/others');
+const ctrlLocations = require('../Controllers/locations'); // Updated path
+const ctrlOthers = require('../Controllers/others'); // Updated path
 
 /* Locations pages */
 router.get('/', ctrlLocations.homelist);
