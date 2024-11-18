@@ -1,16 +1,16 @@
-require('./app_server/models/db');
-var creatError = require('http-errors');
+require('./app_api/models/db');
+var createError = require('http-errors'); // Corrected variable name
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./app_server/routes/index');
+var indexRouter = require('./app_api/routes/index');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname,'app_server', 'views'));
+app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
@@ -23,7 +23,7 @@ app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  next(createError(404)); // Corrected variable name
 });
 
 // error handler
