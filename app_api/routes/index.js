@@ -13,4 +13,12 @@ router
     .put(ctrlProducts.ProductsUpdateOne)
     .delete(ctrlProducts.ProductsDeleteOne);
 
+router
+    .route('/user')
+    .post(ctrlProducts.CreateUser);
+
+router
+    .route('/user/:Email')
+    .get(ctrlProducts.UserLogin);
+
 module.exports = router;
