@@ -20,7 +20,7 @@ const DataCreate = function (req, res) {
 const DataGatherProducts = function (req, res) {
     Product.find()
         .then(products => {
-            res.status(200).json(products);
+            res.render('data', { title: 'Product List', products: products });
         })
         .catch(err => {
             console.error("Error gathering products:", err);
