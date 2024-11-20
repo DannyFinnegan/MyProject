@@ -18,7 +18,14 @@ const DataCreate = function (req, res) {
 };
 
 const DataGatherProducts = function (req, res) {
-    res.status(200).json({ "status": "Success, DataGatherProducts Has Passed" });
+    Product.find()
+        .then(products => {
+            res.status(200).json(products);
+        })
+        .catch(err => {
+            console.error("Error gathering products:", err);
+            res.status(500).json({ "message": "Error gathering products" });
+        });
 };
 
 const ProductsReadOne = function (req, res) {
