@@ -45,7 +45,24 @@ const ProductsReadOne = function (req, res) {
 };
 
 const ProductsUpdateOne = function (req, res) {
-    res.status(200).json({ "status": "Success, ProductsUpdateOne Has Passed" });
+    const productId = req.params.productid;
+
+    Product.findByIdAndUpdate(productId, {
+        name: req.body.name,
+        price: req.body.price,
+        rating: req.body.rating,
+        image: req.body.image
+    }, { new: true, runValidators: true })
+        .then(product => {
+            if (!product) {
+                return res.status(404).json({ "message": "Product not found" });
+            }
+            res.status(200).json(product);
+        })
+        .catch(err => {
+            console.error("Error updating product:", err);
+            res.status(500).json({ "message": "Error updating product" });
+        });
 };
 
 const ProductsDeleteOne = function (req, res) {

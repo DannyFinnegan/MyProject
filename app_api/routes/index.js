@@ -3,14 +3,14 @@ const router = express.Router();
 const ctrlProducts = require('../controllers/data');
 
 router
-    .route('/data')
+    .route('/')
     .get(ctrlProducts.DataGatherProducts)
     .post(ctrlProducts.DataCreate);
 
 router
-    .route('/data/:productid')
+    .route('/:productid')
     .get(ctrlProducts.ProductsReadOne)
-    .put(ctrlProducts.ProductsUpdateOne)
+    .put(ctrlProducts.ProductsUpdateOne) 
     .delete(ctrlProducts.ProductsDeleteOne);
 
 router
