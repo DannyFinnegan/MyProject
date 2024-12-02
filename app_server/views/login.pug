@@ -5,21 +5,16 @@ block content
     html
         head
             meta(charset='UTF-8')
-            title Registration Form
+            title Login Form
             meta(name='viewport', content='width=device-width, initial-scale=1')
         body
             .container
-                // - Heading
                 header.heading 
                     h1 Login
                 hr
 
-                // - Form starting
-                form(action='/submit', method='POST')
+                form(action='/login', method='POST')
                     .row
-
-                        
-                        // - For Email
                         .col-sm-12
                             .row
                                 .col-xs-4
@@ -27,16 +22,12 @@ block content
                                 .col-xs-8
                                     input#email.form-control(type='email', name='email', placeholder='Enter your email')
 
-                        // - For Password
                         .col-sm-12
                             .row
                                 .col-xs-4
                                     label(for='password') Password:
                                 .col-xs-8
-                                    input#password.form-control(type='password', name='password', placeholder='Enter your Password')
+                                    input#password.form-control(type='password', name='password', placeholder='Enter your password')
 
-                        
-
-                // - Submit Button
-                .col-sm-12
-                    button.btn.btn-warning(type='Login') Submit
+                    .col-sm-12
+                        button.btn.btn-warning(type='submit') Submit
