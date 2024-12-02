@@ -3,6 +3,21 @@ const router = express.Router();
 const passport = require('passport');
 const ctrlProducts = require('../controllers/data');
 const User = require('../models/user');
+const ctrlLocations = require('../controllers/user');
+
+router
+    .route('/login')
+    .get(ctrlLocations.login);
+
+router
+    .route('/register')
+    .get(ctrlLocations.register);
+
+router
+    .route('/user/:Email')
+    .get(ctrlProducts.UserLogin);
+
+router.get('/favicon.ico', (req, res) => res.status(204));
 
 router
     .route('/')
@@ -18,11 +33,6 @@ router
 router
     .route('/user')
     .post(ctrlProducts.CreateUser);
-
-router
-    .route('/user/:Email')
-    .get(ctrlProducts.UserLogin);
-
 
 router.post('/register', (req, res) => {
     User.register(new User({ email: req.body.email, name: req.body.name }), req.body.password, (err, user) => {
@@ -48,6 +58,11 @@ router.get('/logout', (req, res) => {
         }
         res.status(200).json({ message: 'Logout successful' });
     });
+});
+
+// Middleware to handle invalid routes
+router.use((req, res, next) => {
+    res.status(404).json({ message: 'Route not found' });
 });
 
 module.exports = router;
