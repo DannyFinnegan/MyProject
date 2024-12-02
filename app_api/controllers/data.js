@@ -4,6 +4,14 @@ require('../models/user');
 const Product = mongoose.model('Product');
 const User = mongoose.model('User');
 
+const LoadLogin = function (req, res) {
+    res.render('login', { title: 'Login' });
+};
+
+const LoadRegister = function (req, res) {
+    res.render('register', { title: 'Register' });
+};
+
 const DataCreate = function (req, res) {
     Product.create({
         name: req.body.name,
@@ -102,5 +110,7 @@ module.exports = {
     ProductsUpdateOne,
     ProductsDeleteOne,
     CreateUser,
-    UserLogin
+    UserLogin,
+    LoadLogin,
+    LoadRegister
 };

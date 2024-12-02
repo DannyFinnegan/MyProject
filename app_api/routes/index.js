@@ -5,6 +5,21 @@ const ctrlProducts = require('../controllers/data');
 const User = require('../models/user');
 
 router
+    .route('/login')
+    .get(ctrlProducts.LoadLogin)
+    //.post(ctrlProducts.CreateUser);
+
+router
+    .route('/register')
+    .get(ctrlProducts.LoadRegister);
+
+router
+    .route('/user/:Email')
+    .get(ctrlProducts.UserLogin);
+
+router.get('/favicon.ico', (req, res) => res.status(204));
+
+router
     .route('/')
     .get(ctrlProducts.DataGatherProducts)
     .post(ctrlProducts.DataCreate);
@@ -15,14 +30,13 @@ router
     .put(ctrlProducts.ProductsUpdateOne)
     .delete(ctrlProducts.ProductsDeleteOne);
 
-router
-    .route('/user')
-    .post(ctrlProducts.CreateUser);
+router.use((req, res, next) => {
+    res.status(404).json({ message: 'Route not found' });
+});
 
-router
-    .route('/user/:Email')
-    .get(ctrlProducts.UserLogin);
 
+module.exports = router;
+=======
 
 router.post('/register', (req, res) => {
     User.register(new User({ email: req.body.email, name: req.body.name }), req.body.password, (err, user) => {
@@ -51,3 +65,4 @@ router.get('/logout', (req, res) => {
 });
 
 module.exports = router;
+
