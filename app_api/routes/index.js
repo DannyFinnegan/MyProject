@@ -7,11 +7,13 @@ const ctrlLocations = require('../controllers/user');
 
 router
     .route('/login')
-    .get(ctrlLocations.login);
+    .get(ctrlLocations.loadlogin)
+    .post(ctrlLocations.UserLogin);
 
 router
     .route('/register')
-    .get(ctrlLocations.register);
+    .get(ctrlLocations.loadregister)
+    .post(ctrlLocations.RegisterUser);
 
 router
     .route('/user/:Email')
@@ -45,11 +47,6 @@ router.post('/register', (req, res) => {
     });
 });
 
-// Login route
-router.post('/login', passport.authenticate('local'), (req, res) => {
-    res.status(200).json({ message: 'Login successful' });
-});
-
 // Logout route
 router.get('/logout', (req, res) => {
     req.logout(err => {
@@ -66,4 +63,3 @@ router.use((req, res, next) => {
 });
 
 module.exports = router;
-

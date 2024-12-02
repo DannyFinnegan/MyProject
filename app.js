@@ -24,9 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Session and Passport setup
 app.use(session({
-    secret: 'your_secret_key',
-    resave: false,
-    saveUninitialized: false
+  secret: 'TimeForTesting',
+  resave: false,
+  saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());

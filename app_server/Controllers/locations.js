@@ -7,13 +7,6 @@ apiOptions.server = 'https://myproject-cnnc.onrender.com;'
 }
 
 /* GET 'home' page */
-const homelist = function(req, res){
-    const path = '/api/locations'; 
-    const requestOptions = { 
-    url : apiOptions.server + path, 
-    method : 'GET', 
-    json : {}, 
-    }; 
     const homelist = function(req, res){
         const path = '/api/locations'; 
         const requestOptions = { 
@@ -44,7 +37,7 @@ const homelist = function(req, res){
     };
         
         
-    };
+
     
     
 /* GET 'Location info' page */
