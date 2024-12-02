@@ -53,12 +53,16 @@ block content
                             .row
                                 .col-xs-4
                                     label Gender:
-                                .col-xs-4
-                                    input#gender-male(type='radio', name='gender', value='boy')
-                                    | Male
-                                .col-xs-4
-                                    input#gender-female(type='radio', name='gender', value='girl')
-                                    | Female
+                                .col-xs-8
+                                    .form-check.form-check-inline
+                                        input#gender-male.form-check-input(type='radio', name='gender', value='boy')
+                                        label.form-check-label(for='gender-male') Male
+                                    .form-check.form-check-inline
+                                        input#gender-female.form-check-input(type='radio', name='gender', value='girl')
+                                        label.form-check-label(for='gender-female') Female
+                                    .form-check.form-check-inline
+                                        input#gender-other.form-check-input(type='radio', name='gender', value='other')
+                                        label.form-check-label(for='gender-other') Other
 
                 // - Submit Button
                 .col-sm-12
