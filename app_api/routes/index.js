@@ -27,37 +27,19 @@ router
     .post(ctrlProducts.DataCreate);
 
 router
+    .route('/logout')
+    .get(ctrlLocations.UserLogout); 
+
+router
     .route('/:productid')
     .get(ctrlProducts.ProductsReadOne)
     .put(ctrlProducts.ProductsUpdateOne)
     .delete(ctrlProducts.ProductsDeleteOne);
 
 router
-    .route('/user')
-    .post(ctrlProducts.CreateUser);
+    .route('/register')
+    .post(ctrlLocations.RegisterUser);
 
-router.post('/register', (req, res) => {
-    User.register(new User({ email: req.body.email, name: req.body.name }), req.body.password, (err, user) => {
-        if (err) {
-            return res.status(500).json({ message: err.message });
-        }
-        passport.authenticate('local')(req, res, () => {
-            res.status(200).json({ message: 'Registration successful' });
-        });
-    });
-});
-
-// Logout route
-router.get('/logout', (req, res) => {
-    req.logout(err => {
-        if (err) {
-            return res.status(500).json({ message: err.message });
-        }
-        res.status(200).json({ message: 'Logout successful' });
-    });
-});
-
-// Middleware to handle invalid routes
 router.use((req, res, next) => {
     res.status(404).json({ message: 'Route not found' });
 });

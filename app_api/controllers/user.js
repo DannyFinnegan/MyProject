@@ -40,9 +40,19 @@ const UserLogin = function (req, res, next) {
     })(req, res, next);
 }
 
+const UserLogout = function (req, res, next) {
+    req.logout((err) => {
+        if (err) {
+            return next(err);
+        }
+        res.redirect('/');
+    });
+}
+
 module.exports = {
     loadlogin,
     loadregister,
     RegisterUser,
-    UserLogin
+    UserLogin,
+    UserLogout
 };

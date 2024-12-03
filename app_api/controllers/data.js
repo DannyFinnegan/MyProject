@@ -2,15 +2,6 @@ const mongoose = require('mongoose');
 require('../models/products');
 require('../models/user');
 const Product = mongoose.model('Product');
-const User = mongoose.model('User');
-
-const LoadLogin = function (req, res) {
-    res.render('login', { title: 'Login' });
-};
-
-const LoadRegister = function (req, res) {
-    res.render('register', { title: 'Register' });
-};
 
 const DataCreate = function (req, res) {
     Product.create({
@@ -28,7 +19,11 @@ const DataCreate = function (req, res) {
 const DataGatherProducts = function (req, res) {
     Product.find()
         .then(products => {
-            res.render('data', { title: 'Product List', products: products });
+            res.render('data', { 
+                title: `Welcome ${req.user ? req.user.name : 'Guest'}`, 
+                products: products,
+                user: req.user ? req.user.name : 'Guest'
+            });
         })
         .catch(err => {
             console.error("Error gathering products:", err);
@@ -111,6 +106,4 @@ module.exports = {
     ProductsDeleteOne,
     CreateUser,
     UserLogin,
-    LoadLogin,
-    LoadRegister
 };

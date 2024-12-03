@@ -2,6 +2,7 @@ doctype html
 head
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   title #{title}
+  link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap')
   link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
   link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
   link(rel='stylesheet', href='/stylesheets/style.css')
@@ -13,9 +14,12 @@ nav.navbar.fixed-top.navbar-toggleable-md.navbar-inverse
     #navbarMain.navbar-collapse.collapse
       ul.navbar-nav.mr-auto
         li.nav-item.nav-gap
-          a.nav-link(href='/Register/') Register 
+          a.nav-link(href='/register') Register 
         li.nav-item.nav-gap
-          a.nav-link(href='/Login') Login 
+          a.nav-link(href='/login') Login
+        if user && user != 'Guest'
+          li.nav-item.nav-gap
+            a.nav-link(href='/logout') Logout
 .container
   block content
   footer
