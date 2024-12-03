@@ -149,3 +149,7 @@ legend {
     justify-content: space-between;
     height: 100%;
 }
+
+.nav-gap {
+  margin-right: 50px; 
+}
