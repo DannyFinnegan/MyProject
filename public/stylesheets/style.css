@@ -10,17 +10,17 @@
 }
 
 body {
-  font-family: "Cabin", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   color: #ffffff;
   background-color: #108a93;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
 .navbar {
-  background-color: #ad1d28;
+  background-color: #ad1d28; 
   border-color: #911821;
 }
 
@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .banner {
   margin-top: 4em;
-  border-bottom: 1px solid #469ea8;
+  border-bottom: 1px solid #469ea8; 
   margin-bottom: 1.5em;
   padding-bottom: 0.5em;
 }
@@ -40,12 +40,32 @@ h1 small {
 }
 
 .card {
-  background-color: #469ea8;
+  background-color: #469ea8; 
 }
 
 .card-primary {
   border-color: #a2ced3;
   margin-bottom: 1rem;
+}
+
+
+.btn-primary {
+  background-color: #f4a261; 
+  border-color: #e76f51; 
+}
+
+.footer {
+  background-color: #264653; 
+}
+
+.highlight {
+  background-color: #2a9d8f; 
+  color: #ffffff;
+}
+
+.alert {
+  background-color: #e9c46a; 
+  color: #000000;
 }
 
 .review-header {
@@ -148,4 +168,8 @@ legend {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+}
+
+.nav-gap {
+  margin-right: 50px; 
 }

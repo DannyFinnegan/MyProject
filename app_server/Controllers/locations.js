@@ -1,57 +1,45 @@
-/* GET 'home' page */
-const homelist = function (req, res) {
-    res.render('data', {
-        GPU: 'Graphics Cards',
-        CentPU: 'Central Processing Units',
-        graphicsCards:
-            [  {
-                    name: 'Nvidia RTX 4060',
-                    price: '€296.99',
-                    rating: 3,
-                    image: 'images/4060Regular.jpg'
-                },
-                {
-                    name: 'Nvidia RTX 4070 Super',
-                    price: '€356.99',
-                    rating: 3,
-                    sale: ' 20%',
-                    image: 'images/4070Super.jpg'
-                },
-                {
-                    name: 'Nvidia RTX 4080 Super',
-                    price: '€566.99',
-                    rating: 4,
-                    sale: ' 10%',
-                    image: 'images/4080Super.jpg'
-                },
-              
-                {
-                    name: 'Nvidia RTX 4090',
-                    price: '€756.99',
-                    rating: 5,
-                    sale: ' 35%',
-                    image: 'images/4090Regular.jpg'
-                }
-            ],
-        CentralProcessingUnits:
-        [
-        {
-            name: 'Ryzen 7 5700X',
-            price: '€126.99',
-            rating: 4,
-            image: 'images/Ryzen75800XCPU.jpg'
-        },
-        {
-            name: 'Ryzen 9 7900x',
-            price: '€526.99',
-            rating: 5,
-            sale: ' 50%',
-            image: 'images/Ryzen97900XCPU.jpg'
-        }
-    ]
-    });
+const request = require('request');
+const apiOptions = { 
+server : 'http://localhost:3000' 
+}; 
+if (process.env.NODE_ENV === 'production') { 
+apiOptions.server = 'https://myproject-cnnc.onrender.com;' 
+}
 
-};
+/* GET 'home' page */
+    const homelist = function(req, res){
+        const path = '/api/locations'; 
+        const requestOptions = { 
+        url : apiOptions.server + path, 
+        method : 'GET', 
+        json : {}, 
+        qs : { 
+        lng : -0.9690884, 
+        lat : 51.455041, 
+        maxDistance : 20 
+        } 
+        }; 
+        request(
+            requestOptions, function(err, response, body) {
+                _renderHomepage(req, res, body); 
+            }
+        );
+    };
+
+    const _renderHomepage = function(req, res, responseBody){
+        res.render('locations-list', {
+            title: 'Irish Computer Components',
+            pageHeader: {
+                title: 'Irish Computer Components',
+            },
+            locations: responseBody
+        });
+    };
+        
+        
+
+    
+    
 /* GET 'Location info' page */
 const register = function (req, res) {
     res.render('register', { title: 'Register User' });
