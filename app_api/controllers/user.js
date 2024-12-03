@@ -11,6 +11,10 @@ const loadregister = function (req, res) {
     res.render('register', { title: 'Register User' });
 };
 
+const LoadFailedLogin = function (req, res) {
+    res.render('LoginFailed', { errorMessage: req.query.message || 'Login Failed' });
+}
+
 const RegisterUser = function (req, res) {
     const newUser = new User({ email: req.body.email, name: req.body.name });
     User.register(newUser, req.body.password, (err, user) => {
@@ -29,11 +33,11 @@ const UserLogin = function (req, res, next) {
             return next(err);
         }
         if (!user) {
-            return res.status(400).json({ message: 'Invalid email or password' });
+            return res.redirect('/LoginFailed?message=Email or Password is incorrect');
         }
         req.logIn(user, (err) => {
             if (err) {
-                return next(err);
+                return res.redirect('/LoginFailed?message=Please try again later');
             }
             return res.redirect('/');
         });
@@ -54,5 +58,6 @@ module.exports = {
     loadregister,
     RegisterUser,
     UserLogin,
-    UserLogout
+    UserLogout,
+    LoadFailedLogin
 };

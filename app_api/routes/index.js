@@ -5,6 +5,11 @@ const ctrlProducts = require('../controllers/data');
 const User = require('../models/user');
 const ctrlLocations = require('../controllers/user');
 
+
+router
+    .route('/LoginFailed')
+    .get(ctrlLocations.LoadFailedLogin)
+    
 router
     .route('/login')
     .get(ctrlLocations.loadlogin)
