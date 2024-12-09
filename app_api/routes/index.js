@@ -21,7 +21,7 @@ router
     .post(ctrlLocations.RegisterUser);
 
 router
-    .route('/user/:Email')
+    .route('/user:Email')
     .get(ctrlProducts.UserLogin);
 
 router.get('/favicon.ico', (req, res) => res.status(204));
