@@ -69,7 +69,19 @@ const ProductsUpdateOne = function (req, res) {
 };
 
 const ProductsDeleteOne = function (req, res) {
-    res.status(200).json({ "status": "Success, ProductsDeleteOne Has Passed" });
+    const productId = req.params.productid;
+
+    Product.findByIdAndDelete(productId)
+        .then(product => {
+            if (!product) {
+                return res.status(404).json({ "message": "Product not found" });
+            }
+            res.status(204).json(null);
+        })
+        .catch(err => {
+            console.error("Error deleting product:", err);
+            res.status(500).json({ "message": "Error deleting product" });
+        });
 };
 
 const CreateUser = function (req, res) {
